@@ -70,7 +70,8 @@ function CreateMenu() {
 
                 <label style={{ margin: '0 0 10px', display: 'block' }}>
                     Small Description
-                    <input ref={desc_ref} style={{width: '100%'}} type="text" id="small_desc" name="small_desc" onChange={(e) => setMenuDesc(e.target.value)} />
+                    {/* <input ref={desc_ref} style={{width: '100%'}} type="text" id="small_desc" name="small_desc" onChange={(e) => setMenuDesc(e.target.value)} /> */}
+                    <textarea ref={desc_ref} style={{width: '100%'}} id="small_desc" name="small_desc" onChange={(e) => setMenuDesc(e.target.value)}></textarea>
                 </label>
 
                 <label style={{ margin: '0 0 10px', display: 'block' }}>
