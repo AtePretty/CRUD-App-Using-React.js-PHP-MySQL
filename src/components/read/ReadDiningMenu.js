@@ -65,6 +65,7 @@ function ReadDiningMenu() {
                         </div>
                         <h3>{menu.menu}</h3>
                         <p>{menu.description}</p>
+                        <Link to="/user-menu" state={{menuPass: menu.id}}>Learn More</Link>
                     </div>
                 )
             })}
