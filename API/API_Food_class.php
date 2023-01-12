@@ -7,16 +7,25 @@ $sql = "SELECT item_class.id, item_class.item_name, item_class.item_img, item_cl
 $result = $con->query($sql) or die($con->error);
 $row = $result->fetch_assoc();
 
-$foodData = array();
-$food_ids = array();
-
+$menuData = array();
+$allMenu = array();
+$allFood = array();
 $allItems = array();
 
 do {
+    $menu = new stdClass();
+    $menu->menu_name = $row["menu_name"];
+    $menu->menu_id = $row["menu_id"];
+    $menu->menu_desc = $row["description"];
+
+    $foodList = new stdClass();
+    $foodList->food_name = $row["food_name"];
+    $foodList->food_id = $row["food_id"];
+    
     $item = new stdClass();
-    $item->name = $row["item_name"];
-    $item->id = $row["id"];        
-    $item->img = $row["item_img"];
+    $item->item_name = $row["item_name"];
+    $item->item_id = $row["id"];        
+    $item->item_img = $row["item_img"];
 
     $itemArray = array();
     $itemArray =  $item;
@@ -24,31 +33,40 @@ do {
 
     $foodArray = array();
     array_push($foodArray, $itemArray);
-        
-    $foodList = new stdClass();
-    $foodList->name = $row["food_name"];
-    $foodList->id = $row["food_id"];
-    $foodList->item = $foodArray;
-
-    if (!in_array($row["food_id"], $food_ids, true)) {
-        array_push($food_ids, $row["food_id"]);
-        array_push($foodData, $foodList);
-    } else {
-        for ($i = 0; $i < count($foodData); $i++) {
-            if ($row["food_id"] === $foodData[$i]->id) {
-                array_push($foodData[$i]->item, $itemArray);
+    
+    if (!in_array($row["food_id"], $allFood, true)) {
+        array_push($allFood, $row["food_id"]);
+        $foodList->food_item = $foodArray;
+        $menuArray = array();
+        array_push($menuArray, $foodList);
+        if (!in_array($row["menu_id"], $allMenu, true)) {
+            array_push($allMenu, $row["menu_id"]);
+            $menu->menu_food = $menuArray;
+            array_push($menuData, $menu);
+        } else {
+            for ($i = 0; $i < count($menuData); $i++) {
+                if ($row["menu_id"] === $menuData[$i]->menu_id) {
+                    array_push($menuData[$i]->menu_food, $foodList);
+                }
             }
         }
         
+    } else {
+        for ($i = 0; $i < count($menuData); $i++) {
+            for ($j = 0; $j < count($menuData[$i]->menu_food); $j++) {
+                if ($row["food_id"] === $menuData[$i]->menu_food[$j]->food_id) {
+                    array_push($menuData[$i]->menu_food[$j]->food_item, $itemArray);
+                }
+            }
+        }
     }
-
-    
 } while($row = $result->fetch_assoc());
 
 $foodClass = new stdClass();
 $foodClass->item_total = count($allItems);
-$foodClass->food_total = count($food_ids);
-$foodClass->food = $foodData;
+$foodClass->food_total = count($allFood);
+$foodClass->menu_total = count($allMenu);
+$foodClass->menu = $menuData;
 
 echo json_encode($foodClass);
 exit;
