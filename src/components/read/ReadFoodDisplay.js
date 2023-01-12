@@ -38,6 +38,11 @@ function ReadFoodDisplay() {
                                         {food.food_item.map((item) => {
                                             return (
                                                 <div key={item.item_id}>
+                                                {/* 
+                                                    This is connected to the bug I found in the API_Fodd_class.php,
+                                                    the data in $itemArray is duplicated. I still haven't found the
+                                                    bug yet.
+                                                */}
                                                     <img src={window.location.origin + '/uploads/' + item.item_img} alt="item.item_name" />
                                                     <p>{item.item_name}</p>
                                                 </div>
