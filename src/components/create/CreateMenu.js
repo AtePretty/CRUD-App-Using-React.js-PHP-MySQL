@@ -26,9 +26,9 @@ function CreateMenu() {
 
         const fData = new FormData();
         fData.append('dining_id', diningId)
-        menuName.length === 0 ? fData.append('menu_name', '') : fData.append('menu_name', menuName)
-        menuDesc.length === 0 ? fData.append('small_desc', '') : fData.append('small_desc', menuDesc)
-        menuImg.length === 0 ? fData.append('menu_img', '') : fData.append('menu_img', menuImg[0])
+        fData.append('menu_name', menuName)
+        fData.append('small_desc', menuDesc)
+        fData.append('menu_img', menuImg[0])
 
         Axios.post("http://localhost/Capstone/CREATE/Add_menu_names.php", fData)
         .then(() => {
@@ -70,7 +70,6 @@ function CreateMenu() {
 
                 <label style={{ margin: '0 0 10px', display: 'block' }}>
                     Small Description
-                    {/* <input ref={desc_ref} style={{width: '100%'}} type="text" id="small_desc" name="small_desc" onChange={(e) => setMenuDesc(e.target.value)} /> */}
                     <textarea ref={desc_ref} style={{width: '100%'}} id="small_desc" name="small_desc" onChange={(e) => setMenuDesc(e.target.value)}></textarea>
                 </label>
 
