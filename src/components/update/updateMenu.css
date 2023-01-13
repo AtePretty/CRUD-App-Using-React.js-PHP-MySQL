@@ -1,0 +1,30 @@
+.general_form.up_menu form {
+    width: 700px;
+}
+.general_form.up_menu form textarea {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 30px;
+    background: #F9F4EF;
+    margin-top: 10px;
+    height: 200px;
+    resize: none;
+}
+.general_form.up_menu form input[type=file] {
+    cursor: pointer;
+}
+.general_form.up_menu form select {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #8C7851;
+    padding: 15px;
+    color: #020826;
+    margin-top: 10px;
+    background: none;
+    cursor: pointer;
+}
+.general_form.up_menu form option {
+    cursor: pointer;
+}

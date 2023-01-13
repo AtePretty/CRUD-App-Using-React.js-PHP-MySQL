@@ -1,0 +1,15 @@
+.general_form.up_dining form .editDelete {
+    display: flex;
+    gap: 10px;
+}
+.general_form.up_dining form .editDelete button:last-child {
+    background: #F9F4EF;
+    color: #020826;
+    border: 1px solid;
+    box-shadow: none;
+}
+.general_form.up_dining form .editDelete button:last-child:hover {
+    background: #8c78515b;
+    border: 1px solid;
+    box-shadow: none;
+}
