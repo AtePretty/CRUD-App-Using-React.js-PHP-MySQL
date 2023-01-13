@@ -22,12 +22,11 @@ function CreateDining() {
     }
 
     return (
-        <div className='dining_form'>
+        <div className='general_form'>
             <p><Link to='/admin'>Back to Admin</Link></p>
             <form action="" method="post">
-                <h1>INSERT</h1>
                 <label>Dining Name <input ref={dining_name_ref} type="text" id="dining_name" name="dining_name" onChange={(e) => setDiningName(e.target.value)} /></label>
-                <button type="button" name='send' onClick={handleSubmit}>send</button>
+                <button type="button" name='send' onClick={handleSubmit}>Insert</button>
             </form>
         </div>
     )

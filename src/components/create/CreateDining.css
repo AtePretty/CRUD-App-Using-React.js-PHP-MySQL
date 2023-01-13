@@ -1,23 +1,23 @@
-.dining_form {
+.general_form {
     background: #F9F4EF;
     min-height: 100vh;
 }
-.dining_form p {
+.general_form p {
     margin: 0 10vh;
     padding: 10vh 0;
     font-weight: 600;
 }
-.dining_form p a {
+.general_form p a {
     text-decoration: none;
     transition: all 0.3s ease;
     color: #8C7851;
 }
-.dining_form p a:hover {
+.general_form p a:hover {
     color: #020826;
     border-bottom: 1px solid;
     padding-bottom: 10px;
 }
-.dining_form form {
+.general_form form {
     width: 500px;
     margin: auto;
     background: #FFFFFF;
@@ -27,19 +27,14 @@
     top: 50%;
     left: 50%;
 }
-.dining_form form h1 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: #7d5d3b;
-}
-.dining_form form label {
+.general_form form label {
     margin: 0 0 10px;
     width: 100%;
     color: #8C7851;
     font-weight: 700;
     margin-bottom: 30px;
 }
-.dining_form form input {
+.general_form form input {
     width: 100%;
     outline: none;
     border: none;
@@ -48,10 +43,10 @@
     color: #020826;
     margin-top: 10px;
 }
-.dining_form form input:focus {
+.general_form form input:focus {
     background: #F9F4EF;
 }
-.dining_form form button {
+.general_form form button {
     width: 100%;
     box-shadow: inset 0px 1px 0px 0px #a6827e;
 	background: linear-gradient(to bottom, #8C7851 5%, rgb(81, 61, 38) 100%);
@@ -65,7 +60,7 @@
     outline: none;
     border: none;
 }
-.dining_form form button:hover {
+.general_form form button:hover {
     background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
 	background-color:#634b30;
 }
