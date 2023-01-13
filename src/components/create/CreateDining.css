@@ -1,0 +1,71 @@
+.dining_form {
+    background: #F9F4EF;
+    min-height: 100vh;
+}
+.dining_form p {
+    margin: 0 10vh;
+    padding: 10vh 0;
+    font-weight: 600;
+}
+.dining_form p a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: #8C7851;
+}
+.dining_form p a:hover {
+    color: #020826;
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+}
+.dining_form form {
+    width: 500px;
+    margin: auto;
+    background: #FFFFFF;
+    padding: 40px 25px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+.dining_form form h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #7d5d3b;
+}
+.dining_form form label {
+    margin: 0 0 10px;
+    width: 100%;
+    color: #8C7851;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.dining_form form input {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #8C7851;
+    padding: 15px;
+    color: #020826;
+    margin-top: 10px;
+}
+.dining_form form input:focus {
+    background: #F9F4EF;
+}
+.dining_form form button {
+    width: 100%;
+    box-shadow: inset 0px 1px 0px 0px #a6827e;
+	background: linear-gradient(to bottom, #8C7851 5%, rgb(81, 61, 38) 100%);
+	background-color: #7d5d3b;
+	display: block;
+    color:#ffffff;
+	font-size: 16px;
+	padding: 10px 0 !important;
+	text-shadow: 0px 1px 0px #4d3534;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+}
+.dining_form form button:hover {
+    background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+	background-color:#634b30;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import Axios from 'axios'
 import { Link } from 'react-router-dom'
+import './CreateDining.css'
 
 function CreateDining() {
     const [diningName, setDiningName] = useState('')
@@ -21,13 +22,12 @@ function CreateDining() {
     }
 
     return (
-        <div>
-            <p><Link to='/admin'>Go back</Link></p>
-            <p></p>
+        <div className='dining_form'>
+            <p><Link to='/admin'>Back to Admin</Link></p>
             <form action="" method="post">
-                <label style={{margin: '0 0 10px', display: 'block'}}>Dining Name <input ref={dining_name_ref} style={{width: '100%'}} type="text" id="dining_name" name="dining_name" onChange={(e) => setDiningName(e.target.value)} /></label>
-                 <br />
-                <input style={{padding: '5px 15px'}} type="button" name='send' value="send" onClick={handleSubmit} />
+                <h1>INSERT</h1>
+                <label>Dining Name <input ref={dining_name_ref} type="text" id="dining_name" name="dining_name" onChange={(e) => setDiningName(e.target.value)} /></label>
+                <button type="button" name='send' onClick={handleSubmit}>send</button>
             </form>
         </div>
     )
