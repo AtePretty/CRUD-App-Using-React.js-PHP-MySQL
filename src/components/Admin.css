@@ -1,0 +1,71 @@
+.admin_page {
+    background: #F9F4EF;
+}
+.admin_page p {
+    margin: 0 10vh;
+    padding: 10vh 0;
+    font-weight: 600;
+}
+.admin_page p a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: #8C7851;
+}
+.admin_page p a:hover {
+    color: #020826;
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+}
+.admin_page h1 {
+    position: absolute;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.general_list {
+    margin-bottom: 70px;
+}
+.general_list > h2 {
+    margin: 30px 0 0;
+    text-align: center;
+}
+.general_list > a {
+    margin: 0 0 30px;
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+    text-align: center;
+    font-weight: 900;
+    color: #8C7851;
+    transition: all 0.3s ease;
+}
+.general_list > a:hover {
+    color: #020826;
+}
+.general_list table {
+    width: 600px;
+    margin: auto;
+    background: #FFFFFF;
+}
+.general_list table :is(th, td) {
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+}
+.general_list table th {
+    border-bottom-width: 3px;
+    background: #8C7851;
+    color: #FFFFFE;
+}
+.general_list table :is(th, td):last-child {
+    text-align: center;
+}
+.general_list table tr td:last-child a {
+    text-decoration: none;
+    color: #8C7851;
+    font-weight: 700;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.general_list table tr td:last-child a:hover {
+    padding-left: 20px;
+}
