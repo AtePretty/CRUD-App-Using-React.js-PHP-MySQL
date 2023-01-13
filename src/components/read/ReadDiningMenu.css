@@ -1,3 +1,103 @@
-button.active {
-    background: gold;
+.dining_page {
+    background: #F9F4EF;
+}
+.dining_page h1 {
+    font-size: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 97px;
+}
+
+.nav_dining {
+    display: flex;
+    gap: 10px 5px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid #020826;
+    margin: 102px 226px 0;
+}
+.nav_dining button {
+    outline: none;
+    border: none;
+    background: none;
+    padding: 10px 45px;
+    margin: 15px 7px;
+    width: fit-content;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+.nav_dining button.active {
+    background: #8C7851;
+    color: #FFFFFE;
+}
+.nav_dining button:hover {
+    background: #8C7851;
+    color: #FFFFFE;
+}
+
+.menu_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 113px 150px;
+}
+.menu_cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+.menu_cards .menu_card {
+    width: 619px;
+}
+.menu_cards .menu_card a {
+    text-decoration: none;
+    cursor: default;
+    color: #020826;
+}
+.menu_cards .menu_card .menu_img {
+    width: 619px;
+    height: 290px;
+    overflow: hidden;
+    background: #8C7851;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.menu_cards .menu_card .menu_img img {
+    width: 100%;
+    object-fit: cover;
+}
+.menu_cards .menu_text {
+    padding: 24px;
+    text-align: left;
+    background: #FFFFFE;
+}
+.menu_cards .menu_text h3 {
+    margin-top: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 27px;
+}
+.menu_cards .menu_text p {
+    font-size: 15px;
+}
+.menu_cards .menu_text button {
+    box-shadow: inset 0px 1px 0px 0px #a6827e;
+	background: linear-gradient(to bottom, #8C7851 5%, rgb(81, 61, 38) 100%);
+	background-color: #7d5d3b;
+	border: 1px solid #54381e;
+	display: inline-block;
+    color:#ffffff;
+	font-size: 13px;
+	padding: 6px 24px;
+	text-shadow: 0px 1px 0px #4d3534;
+    text-transform: uppercase;
+    margin-top: 21px;
+}
+.menu_cards .menu_text button:hover {
+    background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+	background-color:#634b30;
 }
