@@ -5,10 +5,9 @@
     $dining_id = $_POST['dining_id'];
     $menu_name = $_POST['menu_name'];
     $small_desc = $_POST['small_desc'];
+    $img = $_FILES['menu_img'];
 
-    if(isset($_FILES['menu_img'])) {
-        $img = $_FILES['menu_img'];
-
+    if(isset($img)) {
         $img_name = $img['name'];
         $img_size = $img['size'];
         $img_temp_name = $img['tmp_name'];
