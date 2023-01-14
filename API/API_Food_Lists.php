@@ -3,7 +3,7 @@ header("Content-Type: application/json");
 include_once("../Connection.php");
 $con = connection();
 
-$sql = "SELECT * FROM food_class INNER JOIN menu_class ON food_class.menu_id = menu_class.id";
+$sql = "SELECT food_class.id, food_class.food_name, food_class.menu_id, menu_class.menu_name FROM food_class INNER JOIN menu_class ON food_class.menu_id = menu_class.id";
 $result = $con->query($sql) or die($con->error);
 $row = $result->fetch_assoc();
 
