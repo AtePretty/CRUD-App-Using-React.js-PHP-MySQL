@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { Link } from 'react-router-dom'
 import './ReadDiningMenu.css'
-import Footer from '../Footer'
+import Hero from '../jsx/Hero'
 
 function ReadDiningMenu() {
     const [diningNames, setDiningNames] = useState([])
@@ -50,37 +50,39 @@ function ReadDiningMenu() {
 
     return (
         <div className='dining_page'>
-            <p><Link to='/'>Go back</Link></p>
-            <h1>Dining</h1>
-            <div className='nav_dining'>
-                <button className={active === "0" ? "active" : ""} onClick={() => setActive("0")}>All</button>
-                {diningNames.map((diningName) => {
-                    return (
-                        <button key={diningName.id} className={active === diningName.id ? "active" : ""} onClick={() => setActive(diningName.id)}>{diningName.name}</button>
-                    )
-                })}
-            </div>
-            <div className='menu_container'>
-                <div className='menu_cards'>
-                    {filter.map((menu, index) => {
+            {/* <p><Link to='/'>Go back</Link></p> */}
+            <div className='width_allowed'>
+                <Hero/>
+                <h1>Dining</h1>
+                <div className='nav_dining'>
+                    <button className={active === "0" ? "active" : ""} onClick={() => setActive("0")}>All</button>
+                    {diningNames.map((diningName) => {
                         return (
-                            <div key={menu.id} className={active === menu.dining ? "active menu_card" : "menu_card"} onClick={() => setActive(menu.dining)} >
-                                <Link to="/user-menu" state={{menuPass: menu.id}}>
-                                    <div className='menu_img'>
-                                        <img src={window.location.origin + '/uploads/' + menu.img} alt={menu.menu}/>
-                                    </div>
-                                    <div className='menu_text'>
-                                        <h3>{menu.menu}</h3>
-                                        <p>{menu.description}</p>
-                                        <button>Learn More</button>
-                                    </div>
-                                </Link>
-                            </div>
+                            <button key={diningName.id} className={active === diningName.id ? "active" : ""} onClick={() => setActive(diningName.id)}>{diningName.name}</button>
                         )
                     })}
                 </div>
+                <div className='menu_container'>
+                    <div className='menu_cards'>
+                        {filter.map((menu, index) => {
+                            return (
+                                <div key={menu.id} className={active === menu.dining ? "active menu_card" : "menu_card"} onClick={() => setActive(menu.dining)} data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                                    <Link to="/user-menu" state={{menuPass: menu.id}}>
+                                        <div className='menu_img'>
+                                            <img src={window.location.origin + '/uploads/' + menu.img} alt={menu.menu}/>
+                                        </div>
+                                        <div className='menu_text'>
+                                            <h3>{menu.menu}</h3>
+                                            <p>{menu.description}</p>
+                                            <button>Learn More</button>
+                                        </div>
+                                    </Link>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
             </div>
-            <Footer/>
         </div>
     )
 }

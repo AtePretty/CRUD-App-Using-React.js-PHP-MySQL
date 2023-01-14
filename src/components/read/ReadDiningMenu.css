@@ -1,3 +1,7 @@
+.width_allowed {
+    max-width: 1280px;
+    margin: auto;
+}
 .dining_page {
     background: #F9F4EF;
 }
@@ -5,7 +9,8 @@
     font-size: 60px;
     text-align: center;
     text-transform: uppercase;
-    margin-top: 97px;
+    padding-top: 97px;
+    font-family: 'soria', serif;
 }
 
 .nav_dining {
@@ -15,7 +20,9 @@
     align-items: center;
     flex-wrap: wrap;
     border: 1px solid #020826;
-    margin: 102px 226px 0;
+    width: fit-content;
+    margin: 30px auto 0;
+    padding: 0 20px;
 }
 .nav_dining button {
     outline: none;
@@ -41,7 +48,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 113px 150px;
+    padding: 80px 150px 113px;
 }
 .menu_cards {
     display: grid;
@@ -49,7 +56,8 @@
     gap: 80px;
 }
 .menu_cards .menu_card {
-    width: 619px;
+    max-width: 530px;
+    min-width: 300px;
 }
 .menu_cards .menu_card a {
     text-decoration: none;
@@ -57,7 +65,8 @@
     color: #020826;
 }
 .menu_cards .menu_card .menu_img {
-    width: 619px;
+    max-width: 530px;
+    min-width: 300px;
     height: 290px;
     overflow: hidden;
     background: #8C7851;
@@ -65,10 +74,11 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    object-fit: cover;
 }
 .menu_cards .menu_card .menu_img img {
     width: 100%;
-    object-fit: cover;
+    height: 100%;
 }
 .menu_cards .menu_text {
     padding: 24px;
@@ -100,4 +110,50 @@
 .menu_cards .menu_text button:hover {
     background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
 	background-color:#634b30;
+}
+
+@media screen and (max-width: 1100px) {
+    .dining_page h1 {
+        font-size: 50px;
+        padding-top: 50px;
+    }
+    .nav_dining {
+        padding: 0 15px;
+    }
+    .nav_dining button {
+        padding: 5px 20px;
+        margin: 8px 5px;
+        font-size: 12px;
+    }
+    .menu_cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    .menu_cards .menu_card {
+        /* width: 530px; */
+        /* min-width: 370px; */
+    }
+    .menu_cards .menu_card a {
+        text-decoration: none;
+        cursor: default;
+        color: #020826;
+    }
+    .menu_cards .menu_card .menu_img {
+        /* width: 530px; */
+        /* min-width: 370px; */
+        /* max-height: 290px; */
+        /* min-height: 150px; */
+        overflow: hidden;
+        background: #8C7851;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    /* .menu_cards .menu_text {
+        padding: 24px;
+        text-align: left;
+        background: #FFFFFE;
+    } */
 }
