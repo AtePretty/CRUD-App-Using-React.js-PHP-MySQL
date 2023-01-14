@@ -50,7 +50,7 @@ function ReadDiningMenu() {
 
     return (
         <div className='dining_page'>
-            {/* <p><Link to='/'>Go back</Link></p> */}
+            <p><Link to='/'>Go back</Link></p>
             <div className='width_allowed'>
                 <Hero/>
                 <h1>Dining</h1>
