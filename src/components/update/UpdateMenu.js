@@ -51,10 +51,6 @@ function UpdateMenu() {
     diningId === "" ? fData.append('dining_id', menu_DineId) : fData.append('dining_id', diningId)
     menuImg.length === 0 ? fData.append('menu_img', menu_img) : fData.append('menu_img', menuImg[0])    
 
-    console.log(menu_name, menu_DineId, menu_img, small_desc)
-    console.log(fData)
-    console.log(menuName)
-
     Axios.post("http://localhost/Capstone/UPDATE/Edit_menu_names.php", fData)
     .then(() => {
       option_ref.current.value = '';
@@ -95,41 +91,8 @@ function UpdateMenu() {
   }, [])
 
   return (
-    <div className='general_form up_dining form up_menu'>
+    <div className='general_form up_dining up_menu'>
       <p><Link to='/admin'>Back to Admin</Link></p>
-      {/* {menus.map((menu) => {
-        if (menu.id === id_pass) {
-          return (
-            <form key={menu.id} action="" method="post" encType="multipart/form-data">
-              <label>Menu Name
-                <input ref={menu_name_ref} type="text" id="menu_name" defaultValue={menu.menu} name="menu_name" onClick={(e) => setMenuName(e.target.value)} />
-              </label>
-              <label>Small Description
-                <textarea ref={desc_ref} id="small_desc" defaultValue={menu.description} name="small_desc" onClick={(e) => setMenuDesc(e.target.value)}></textarea>
-              </label>
-              <label>Image
-                <input type="file" name="menu_img" accept="image/png, image/jpeg" ref={menu_img_ref} onClick={(e) => setMenuImg(e.target.files)} />
-              </label>
-              <label>Dining Category
-                <select defaultValue={menu.dining} required name='dining_id' id='dining_id' ref={option_ref} onClick={(e) => setDiningId(e.target.value)}>
-                  <option value={''} disabled>Please select</option>
-                    {allName.map((dining) => {
-                      return (
-                        <option key={dining.id} value={dining.id}>{dining.name}</option>
-                      )
-                  })}
-                </select>
-              </label>
-              <div className='editDelete'>
-                <button type="button" name='send' onClick={handleSubmit}>Update</button>
-                <button type="button" name='delete' onClick={deleteButton}>Delete</button>
-              </div>
-            </form>
-          )
-        }
-      })} */}
-
-
       <form key={menu_id} action="" method="post" encType="multipart/form-data">
               <label>Menu Name
                 <input ref={menu_name_ref} type="text" id="menu_name" defaultValue={menu_name} name="menu_name" onChange={(e) => setMenuName(e.target.value)} />

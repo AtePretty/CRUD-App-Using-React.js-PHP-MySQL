@@ -1,5 +1,9 @@
 .general_form.up_menu form {
     width: 700px;
+    position: relative;
+    transform: translate(0, 0);
+    top: -10vh;
+    left: 0;
 }
 .general_form.up_menu form textarea {
     width: 100%;
