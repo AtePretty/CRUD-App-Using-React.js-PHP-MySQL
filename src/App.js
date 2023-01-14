@@ -11,6 +11,7 @@ import CreateItem from './components/create/CreateItem';
 import UpdateDining from './components/update/UpdateDining';
 import UpdateMenu from './components/update/UpdateMenu';
 import UpdateFood from './components/update/UpdateFood';
+import UpdateItem from './components/update/UpdateItem';
 
 import ReadDiningMenu from './components/read/ReadDiningMenu';
 import ReadFoodDisplay from './components/read/ReadFoodDisplay';
@@ -34,6 +35,7 @@ function App() {
         <Route path='/admin-edit-food' element={<UpdateFood/>}/>
         <Route path='/admin-add-desc' element={<CreateDescription/>}/>
         <Route path='/admin-add-item' element={<CreateItem/>}/>
+        <Route path='/admin-edit-item' element={<UpdateItem/>}/>
       </Routes>
     </div>
   )
