@@ -21,6 +21,8 @@
     top: 10vh;
     left: 50%;
     transform: translateX(-50%);
+    font-family: Soria, serif;
+    font-size: 70px;
 }
 .general_list {
     margin-bottom: 70px;

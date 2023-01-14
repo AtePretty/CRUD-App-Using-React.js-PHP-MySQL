@@ -32,6 +32,20 @@ function Admin() {
         getAllMenuNames()
     }, [])
 
+    const [food, setFood] = useState([])
+    async function getAllFood() {
+        try {
+            const response = await Axios.get("http://localhost/Capstone/API/API_Food_Lists.php")
+            setFood(response.data.food)
+        }
+        catch (error) {
+            console.error(error)
+        }
+    }
+    useEffect(() => {
+      getAllFood()
+    }, [])
+
   return (
     <div className='admin_page'>
       <p><Link to='/'>Go back</Link></p>
@@ -82,7 +96,30 @@ function Admin() {
           </tbody>
         </table>
       </div>
-      <p><Link to='/admin-add-food'>Add More Food</Link></p>
+      <div className='general_list'>
+        <h2>List of All Foods</h2>
+        <Link to='/admin-add-food'>INSERT</Link>
+        <table>
+          <thead>
+            <tr>
+              <th>food_name</th>
+              <th>menu_name</th>
+              <th>UPDATE</th>
+            </tr>
+          </thead>
+          <tbody>
+          {food.map((food) => {
+            return (
+              <tr key={food.id}>
+                <td>{food.name}</td>
+                <td>{food.menu_name}</td>
+                <td><Link to='/admin-edit-food' state={{foodPass: food.id}}>Edit</Link></td>
+              </tr>
+            )
+          })}
+          </tbody>
+        </table>
+      </div>
       <p><Link to='/admin-add-desc'>Add Description</Link></p>
       <p><Link to='/admin-add-item'>Add Food Items</Link></p>
     </div>
