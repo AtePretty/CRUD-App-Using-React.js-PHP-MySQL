@@ -27,6 +27,7 @@ function CreateFood() {
             food_name.current.value = '';
             setMenuId('')
             setFoodName('')
+            window.location.href = '/admin';
         })
         .catch(error => console.error(error));
     }
@@ -47,22 +48,23 @@ function CreateFood() {
 
 
     return (
-        <div>
+        <div className='general_form up_menu'>
             <p><Link to='/admin'>Go back</Link></p>
-            <form action="" method="post">
-                <label style={{margin: '0 0 10px', display: 'block'}}>Food Name <input ref={food_name} style={{width: '100%'}} type="text" id="food_name" name="food_name" onChange={(e) => setFoodName(e.target.value)} /></label>
+            <form action="" method="post" style={{width: '500px'}}>
+                <label>Food Name <input ref={food_name} type="text" id="food_name" name="food_name" onChange={(e) => setFoodName(e.target.value)} /></label>
                 
+                <label>Menu Category
+                    <select defaultValue={''} required name='menu_id' id='menu_id' ref={menu_id} onChange={(e) => setMenuId(e.target.value)}>
+                        <option value={''} disabled>Please select</option>
+                        {menus.map((menu) => {
+                            return (
+                                <option key={menu.id} value={menu.id}>{menu.menu}</option>
+                            )
+                        })}
+                    </select>
+                </label>
 
-                <select defaultValue={''} required name='menu_id' id='menu_id' ref={menu_id} onChange={(e) => setMenuId(e.target.value)}>
-                    <option value={''} disabled>Please select</option>
-                    {menus.map((menu) => {
-                        return (
-                            <option key={menu.id} value={menu.id}>{menu.menu}</option>
-                        )
-                    })}
-                </select>
-
-                <input style={{padding: '5px 15px'}} type="button" name='send' value="send" onClick={handleSubmit} />
+                <button type="button" name='send' onClick={handleSubmit}>Insert</button>
             </form>
         </div>
     )

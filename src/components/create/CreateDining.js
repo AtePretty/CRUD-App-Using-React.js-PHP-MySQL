@@ -17,6 +17,7 @@ function CreateDining() {
         .then(() => {
             dining_name_ref.current.value = null
             setDiningName('')
+            window.location.href = '/admin';
         })
         .catch(error => console.error(error));
     }

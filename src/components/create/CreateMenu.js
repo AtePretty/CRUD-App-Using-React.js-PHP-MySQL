@@ -40,6 +40,7 @@ function CreateMenu() {
             setMenuDesc('')
             setMenuImg('')
             setDiningId('')
+            window.location.href = '/admin';
         })
         .catch(error => console.error(error));
     }
@@ -60,34 +61,36 @@ function CreateMenu() {
 
 
     return (
-        <div>
+        <div className='general_form up_menu'>
             <p><Link to='/admin'>Go back</Link></p>
             <form action="" method="post" encType="multipart/form-data">
-                <label style={{ margin: '0 0 10px', display: 'block' }}>
+                <label>
                     Menu Name
-                    <input ref={menu_name_ref} style={{width: '100%'}} type="text" id="menu_name" name="menu_name" onChange={(e) => setMenuName(e.target.value)} />
+                    <input ref={menu_name_ref} type="text" id="menu_name" name="menu_name" onChange={(e) => setMenuName(e.target.value)} />
                 </label>
 
-                <label style={{ margin: '0 0 10px', display: 'block' }}>
+                <label>
                     Small Description
-                    <textarea ref={desc_ref} style={{width: '100%'}} id="small_desc" name="small_desc" onChange={(e) => setMenuDesc(e.target.value)}></textarea>
+                    <textarea ref={desc_ref} id="small_desc" name="small_desc" onChange={(e) => setMenuDesc(e.target.value)}></textarea>
                 </label>
 
-                <label style={{ margin: '0 0 10px', display: 'block' }}>
+                <label>
                     Image
-                    <input style={{width: '100%'}} type="file"name="menu_img" accept="image/png, image/jpeg" ref={menu_img_ref} onChange={(e) => setMenuImg(e.target.files)} />
+                    <input type="file"name="menu_img" accept="image/png, image/jpeg" ref={menu_img_ref} onChange={(e) => setMenuImg(e.target.files)} />
                 </label>
 
-                <select defaultValue={''} required name='dining_id' id='dining_id' ref={option_ref} onChange={(e) => setDiningId(e.target.value)}>
-                    <option value={''} disabled>Please select</option>
-                    {diningNames.map((diningName) => {
-                        return (
-                            <option key={diningName.id} value={diningName.id}>{diningName.name}</option>
-                        )
-                    })}
-                </select>
+                <label>Dining Category
+                    <select defaultValue={''} required name='dining_id' id='dining_id' ref={option_ref} onChange={(e) => setDiningId(e.target.value)}>
+                        <option value={''} disabled>Please select</option>
+                        {diningNames.map((diningName) => {
+                            return (
+                                <option key={diningName.id} value={diningName.id}>{diningName.name}</option>
+                            )
+                        })}
+                    </select>
+                </label>
 
-                <input style={{padding: '5px 15px'}} type="button" name='send' value="send" onClick={handleSubmit} />
+                <button type="button" name='send' onClick={handleSubmit}>Insert</button>
             </form>
         </div>
     )
